@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("btn");
+    const count = document.getElementById("count");
+
+    function aclosure() {
+        let counter = 0;
+
+        return function insidecloser() {
+            counter += 1;
+            count.innerText = counter;
+
+            setTimeout(() => {
+                console.log("wait");
+            }, 1000);
+        };
+    }
+
+   
+    const clickkk = aclosure();
+
+    btn.addEventListener("click", () => {
+        clickkk();
+    });
+});
+</script>
+
+<body>
+    <button id="btn">Click</button>
+    <p id="count">0</p>
+    
+    
+</body>
+
+</html>

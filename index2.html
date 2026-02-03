@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function change(){
+            
+            var ele=document.getElementById("text")
+            console.log()
+            var a=ele.value.length
+            document.getElementById("char-count").innerText=`${a}/100 `
+            if ((ele.value.length)>100){
+                document.getElementById("char-count").style.color="red"
+            }
+            else{
+                document.getElementById("char-count").style.color="black"
+            }
+
+
+            
+
+        }
+    </script>
+</head>
+<body>
+    <textarea id="text" oninput="change()" ></textarea>
+<p id="char-count">0 / 100</p>
+</body>
+</html>
